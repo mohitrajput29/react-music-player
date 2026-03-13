@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Music</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="video-background-container">
+        <!-- Abstract CSS animated gradient background -->
+        <div class="bg-gradient"></div>
+        <div class="bg-gradient bg-gradient-2"></div>
+        <div class="bg-gradient bg-gradient-3"></div>
+    </div>
+
+    <div class="app-container glass-panel">
+        
+        <!-- Sidebar: Playlist & Controls -->
+        <aside class="sidebar border-right">
+            <div class="sidebar-header">
+                <h2><i class="ri-mv-fill"></i> Aura Sounds</h2>
+                <div class="header-controls">
+                    <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                        <i class="ri-sun-line"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <i class="ri-search-line search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search songs, artists...">
+            </div>
+
+            <div class="filter-tabs">
+                <button class="tab-btn active" id="tab-all">All Tracks</button>
+                <button class="tab-btn" id="tab-favorites"><i class="ri-heart-fill"></i> Favorites</button>
+            </div>
+
+            <div class="playlist-container" id="playlist">
+                <!-- Songs will be populated here via JS -->
+            </div>
+        </aside>
+
+        <!-- Main Content: Now Playing -->
+        <main class="main-player">
+            <div class="now-playing-header">
+                <h3>Now Playing</h3>
+            </div>
+            
+            <div class="cover-art-container">
+                <div class="cover-art glass-panel" id="cover-art">
+                    <img id="current-cover" src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=500&h=500&fit=crop" alt="Album Art">
+                    <div class="cover-art-overlay"></div>
+                </div>
+            </div>
+
+            <div class="song-info text-center">
+                <h1 id="current-title">Lost in City Lights</h1>
+                <p id="current-artist">Cosmo Sheldrake</p>
+                <button id="fav-btn" class="icon-btn fav-main-btn"><i class="ri-heart-line"></i></button>
+            </div>
+
+            <div class="player-controls">
+                
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <div class="progress-bar-wrapper" id="progress-area">
+                        <div class="progress-bar" id="progress-bar">
+                            <div class="progress-handle"></div>
+                        </div>
+                    </div>
+                    <span id="total-duration">--:--</span>
+                </div>
+
+                <div class="main-buttons">
+                    <button class="icon-btn" id="prev-btn" title="Previous"><i class="ri-skip-back-fill"></i></button>
+                    <button class="play-btn glass-btn" id="play-btn" title="Play/Pause">
+                        <i class="ri-play-fill" id="play-icon"></i>
+                    </button>
+                    <button class="icon-btn" id="next-btn" title="Next"><i class="ri-skip-forward-fill"></i></button>
+                </div>
+
+                <div class="volume-container">
+                    <i class="ri-volume-down-fill" id="volume-icon"></i>
+                    <div class="volume-slider-wrapper" id="volume-area">
+                        <div class="volume-bar" id="volume-bar">
+                            <div class="volume-handle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="main-audio" src=""></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
